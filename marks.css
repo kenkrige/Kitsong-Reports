@@ -1,0 +1,85 @@
+@page {
+    size: A3 landscape;
+    margin: 0.5cm;
+}
+
+h2 {
+  text-align: left;
+  font: 8pt  Arial, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  text-align: left;
+  font: 8pt  Arial, sans-serif;
+}
+
+
+table{
+    page-break-inside: auto;
+}
+
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+
+
+table:after
+ {
+    display:block;
+    height:0px;
+    visibility: hidden;
+}
+
+table {
+  //width: 100%;
+  border: 0.5px solid #000;
+  border-spacing: 0;
+  color: #000;
+  font: 8pt Arial, sans-serif;
+}
+
+
+th,td {
+  padding: 3px 3px;
+  vertical-align: middle;
+  text-align: left;
+  word-wrap: break-word;
+
+}
+
+th {
+  vertical-align: bottom;
+  border: 0.5px solid #000;
+}
+
+thead {
+  background: #b2b2b2;
+  color: #000;
+  font-size: 8pt;
+}
+
+td {
+  border: 0.5px solid #000;
+}
+
+
+.header {
+  display: block;
+  vertical-align: middle;
+    font: 8pt  Arial, sans-serif, bold;
+  padding: 5px;
+  width: 100%;
+}
+
+
+.header img {
+   width:100%;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;         /* <- this does seem to be required */
+  text-overflow: ellipsis;
+}
+
+

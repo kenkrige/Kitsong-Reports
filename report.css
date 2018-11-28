@@ -1,0 +1,102 @@
+@page { size: A4 }
+h2 {
+  text-align: left;
+  font: 15px/1.2  Arial, sans-serif;
+  font-weight: bold;
+}
+
+.user-report {
+  display: block;
+  /*page-break-before: always;*/
+  page-break-after: right;
+}
+
+.batch-report {
+  page-break-before: always;
+  /*counter-reset: page;*/
+}
+
+table{
+    /*page-break-inside: avoid; !important; <-- doesn't work*/
+    display:inline-block;
+}
+
+table:after
+ {
+    display:block;
+    height:0px;
+    visibility: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #000;
+  font: 12px Arial, sans-serif;
+}
+
+
+th,td {
+  padding: 3px 3px;
+  vertical-align: middle;
+  text-align: left;
+  word-wrap: break-word;
+
+}
+
+th {
+  vertical-align: bottom;
+}
+
+thead {
+  background: #b2b2b2;
+  /*background: linear-gradient(#49708f, #293f50);*/
+  color: #000;
+  font-size: 12px;
+/*  text-transform: uppercase; */
+}
+
+td {
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+
+.header {
+  display: block;
+  vertical-align: middle;
+    font: 15px/1.2  Arial, sans-serif, bold;
+  padding: 5px;
+  width: 100%;
+}
+
+.footer {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.header img {
+   width:100%;
+}
+
+hr {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+}
+
