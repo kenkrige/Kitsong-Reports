@@ -1,11 +1,13 @@
 <?php
+
+include "moodle_auth.php";
+
 class SQL{
 //remove public later
 public $con = null;
 
 public function __construct() {
-//	$this->con = mysqli_connect("localhost","reports","kuamosi","moodle");
-	$this->con = mysqli_connect("localhost","moodle", "ku4m0s1","moodle");
+	$this->con = mysqli_connect("localhost", get_user(), get_passwd(), "moodle");
 }
 
 public function students_in_cohort($cohort){

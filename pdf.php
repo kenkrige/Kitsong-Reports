@@ -10,13 +10,20 @@ $params = "cohort=".$cohort['id']."&term=".$_GET['term']."&year=".$_GET['year'].
 //echo "<html><script>window.open('".$url1."');</script></html>";
 //header("Location: $url1");
 
+$password = "";
+$username = "";
+if (isset($_SERVER['PHP_AUTH_USER'])) {
+    $username = $_SERVER['PHP_AUTH_USER'];
+    $password = $_SERVER['PHP_AUTH_PW'];
+}
+
 $url_reports = "http://".$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF'])."/cohort.php?".$params;
-$command_rep = "prince \"".$url_reports."\" ".getcwd()."/pdf/".$reports_file;
+$command_rep = "prince --auth-user=".$username." --auth-password=".$password." \"".$url_reports."\" ".getcwd()."/pdf/".$reports_file;
 
 shell_exec ($command_rep);
 
 $url_marks = "http://".$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF'])."/marks.php?".$params;
-$command_marks = "prince \"".$url_marks."\" ".getcwd()."/pdf/".$marks_file;
+$command_marks = "prince --auth-user=".$username." --auth-password=".$password." \"".$url_marks."\" ".getcwd()."/pdf/".$marks_file;
 
 shell_exec ($command_marks);
 
